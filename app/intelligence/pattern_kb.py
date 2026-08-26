@@ -40,7 +40,7 @@ class PatternKnowledgeBase:
         P = ArchitecturePattern
         CM = CostModel
         self._patterns = {
-            "rag-basic": P("rag-basic","Basic RAG","Vector search + LLM",[{"name":"Emb","tech":"OpenAI"}],[CM("Emb",0,0.00002,"tokens")],["self_hosted"],["gdpr_eu"],{"pros":["Simple"],"cons":["No reranking"]},"100K docs","low","1-2 devs",["rag"]),
+            "rag-basic": P("rag-basic","Basic RAG","Vector search + LLM",[{"name":"Emb","tech":"OpenAI"}],[CM("Emb",0,0.00002,"tokens")],["self_hosted", "cost_efficient"],["gdpr_eu"],{"pros":["Simple"],"cons":["No reranking"]},"100K docs","low","1-2 devs",["rag"]),
             "rag-enterprise": P("rag-enterprise","Enterprise RAG","Hybrid search + reranking + citations",[{"name":"VS","tech":"pgvector"},{"name":"BM25","tech":"ES"},{"name":"Reranker","tech":"Cross-encoder"}],[CM("VS",150,0.15,"GB"),CM("BM25",200,0,"node")],["self_hosted","citations"],[],{"pros":["Best quality","Citations"],"cons":["Higher cost"]},"10M docs","high","3-5 devs",["rag","enterprise"]),
             "rag-serverless": P("rag-serverless","Serverless RAG","Lambda + Pinecone",[{"name":"Lambda","tech":"AWS"}],[CM("Lambda",0,0.0000002,"req")],["serverless"],["on_premise"],{"pros":["Zero ops"],"cons":["Lock-in"]},"1M/day","low","1 dev",["rag"]),
             "agentic-workflow": P("agentic-workflow","Agentic Workflow + HITL","LLM agents with human oversight",[{"name":"Engine","tech":"Custom"},{"name":"LLM","tech":"GPT-4o"},{"name":"HITL","tech":"Custom"}],[CM("Engine",100,0,"inst"),CM("LLM",0,0.03,"1K tok")],["audit_trail","human_oversight"],[],{"pros":["Full audit","Replay"],"cons":["Higher latency"]},"10K/day","high","3-5 devs",["agentic"]),
@@ -50,7 +50,7 @@ class PatternKnowledgeBase:
             "event-lightweight": P("event-lightweight","Lightweight Events","Event log in PostgreSQL",[{"name":"Log","tech":"PG append-only"}],[CM("Log",20,0.00001,"evt")],["audit_trail"],["high_write"],{"pros":["Simple","Cheap"],"cons":["Limited scale"]},"100K/day","medium","1-2 devs",["event-sourcing"]),
             "data-lakehouse": P("data-lakehouse","Data Lakehouse","Delta Lake batch+stream",[{"name":"Storage","tech":"S3"},{"name":"Compute","tech":"Spark"}],[CM("Storage",23,0.023,"GB")],["batch_streaming"],["real_time"],{"pros":["Unified"],"cons":["Complex"]},"10TB/day","high","3-5 devs",["data"]),
             "data-warehouse": P("data-warehouse","Cloud Warehouse","Snowflake/BigQuery",[{"name":"WH","tech":"Snowflake"}],[CM("WH",0,2,"credits")],["analytics"],["self_hosted"],{"pros":["Fast"],"cons":["Expensive"]},"1PB","medium","2-3 devs",["data"]),
-            "streaming": P("streaming","Event Streaming","Kafka real-time",[{"name":"Broker","tech":"Kafka"}],[CM("Kafka",300,0,"cluster")],["real_time"],["simple_crud"],{"pros":["Real-time"],"cons":["Complex"]},"1M evt/sec","very_high","3-5 devs",["data"]),
+            "streaming": P("streaming","Event Streaming","Kafka real-time",[{"name":"Broker","tech":"Kafka"}],[CM("Kafka",300,0,"cluster")],["real_time", "event_driven"],["simple_crud"],{"pros":["Real-time"],"cons":["Complex"]},"1M evt/sec","very_high","3-5 devs",["data"]),
             "ml-pipeline": P("ml-pipeline","ML Pipeline","End-to-end ML training",[{"name":"Train","tech":"SageMaker"}],[CM("Train",0,3,"GPU hr")],["ml_ops"],["low_cost"],{"pros":["Full MLOps"],"cons":["Expensive"]},"100K/day","high","3-5 devs",["ml"]),
             "ml-batch": P("ml-batch","Batch ML Inference","Scheduled scoring",[{"name":"Sched","tech":"Airflow"}],[CM("Comp",50,0,"inst")],["cost_efficient"],["real_time"],{"pros":["Cheap"],"cons":["Stale"]},"1M/day","low","1-2 devs",["ml"]),
             "api-gateway": P("api-gateway","API Gateway","Centralized gateway + auth",[{"name":"GW","tech":"Kong"}],[CM("GW",100,0,"inst")],["api_management"],["low_latency"],{"pros":["Centralized"],"cons":["SPOF"]},"100K rps","medium","2-3 devs",["api"]),
@@ -81,4 +81,8 @@ class PatternKnowledgeBase:
         for cm in pat.cost_models:
             uc = scale.get(cm.unit, 0)
             c = cm.base_monthly + cm.per_unit * uc; total += c
-         
+            bd.append({"component": cm.component, "total": round(c,2)})
+        return {"pattern": pat.name, "monthly_total": round(total,2), "breakdown": bd}
+    def get_all_patterns(self):
+        return [{"id":p.id,"name":p.name,"complexity":p.complexity,"tags":p.tags} for p in self._patterns.values()]
+

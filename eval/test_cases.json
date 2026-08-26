@@ -1,0 +1,112 @@
+[
+  {
+    "id": "tc-001",
+    "name": "Enterprise Event Sourcing with Audit Trail",
+    "requirement": "Build a financial transaction system requiring complete audit trail and time-travel queries",
+    "hard_constraints": ["audit_trail", "time_travel"],
+    "soft_constraints": ["compliance"],
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": ["event-cqrs"],
+    "notes": "Event sourcing is the only pattern that satisfies both audit_trail and time_travel"
+  },
+  {
+    "id": "tc-002",
+    "name": "Multi-Cloud Disaster Recovery",
+    "requirement": "Deploy the same AI service across AWS and Azure for disaster recovery with 99.99% availability",
+    "hard_constraints": ["multi_cloud", "high_availability"],
+    "soft_constraints": [],
+    "budget_monthly": 20000,
+    "team_size": 8,
+    "expected_patterns": ["multi-cloud"],
+    "notes": "Only multi-cloud pattern satisfies both constraints"
+  },
+  {
+    "id": "tc-003",
+    "name": "Zero Trust Healthcare",
+    "requirement": "Build a healthcare platform with compliance and zero trust security model",
+    "hard_constraints": ["security", "compliance"],
+    "soft_constraints": [],
+    "budget_monthly": 8000,
+    "team_size": 4,
+    "expected_patterns": ["zero-trust"],
+    "notes": "Zero trust is required for healthcare compliance"
+  },
+  {
+    "id": "tc-004",
+    "name": "Real-time Event Streaming",
+    "requirement": "Build a real-time analytics platform processing 1M events per second",
+    "hard_constraints": ["real_time", "event_driven"],
+    "soft_constraints": [],
+    "budget_monthly": 5000,
+    "team_size": 4,
+    "expected_patterns": ["streaming"],
+    "notes": "Only Kafka satisfies both real_time and event_driven at this scale"
+  },
+  {
+    "id": "tc-005",
+    "name": "ML Training Pipeline",
+    "requirement": "Build an ML pipeline for training and deploying recommendation models with full MLOps",
+    "hard_constraints": ["ml_ops"],
+    "soft_constraints": ["cost_efficient"],
+    "budget_monthly": 3000,
+    "team_size": 3,
+    "expected_patterns": ["ml-pipeline"],
+    "notes": "ML Pipeline pattern includes MLflow for reproducibility"
+  },
+  {
+    "id": "tc-006",
+    "name": "Agentic Workflow with Audit",
+    "requirement": "Build a workflow automation system with human oversight and complete audit trail",
+    "hard_constraints": ["audit_trail", "human_oversight"],
+    "soft_constraints": ["compliance"],
+    "budget_monthly": 5000,
+    "team_size": 3,
+    "expected_patterns": ["agentic-workflow"],
+    "notes": "Agentic workflow is the only pattern with both audit_trail and human_oversight"
+  },
+  {
+    "id": "tc-007",
+    "name": "Kubernetes Auto-scaling",
+    "requirement": "Migrate to microservices on Kubernetes with auto-scaling",
+    "hard_constraints": ["microservices", "auto_scaling"],
+    "soft_constraints": [],
+    "budget_monthly": 15000,
+    "team_size": 6,
+    "expected_patterns": ["k8s-micro"],
+    "notes": "K8s is the only pattern with both microservices and auto_scaling"
+  },
+  {
+    "id": "tc-008",
+    "name": "Cost-Efficient Self-Hosted RAG",
+    "requirement": "Build a RAG system that is self-hosted and cost-efficient",
+    "hard_constraints": ["self_hosted", "cost_efficient"],
+    "soft_constraints": ["python_native"],
+    "budget_monthly": 500,
+    "team_size": 1,
+    "expected_patterns": ["rag-basic"],
+    "notes": "Basic RAG is the only RAG pattern with both self_hosted and cost_efficient"
+  },
+  {
+    "id": "tc-009",
+    "name": "Serverless Low-Ops",
+    "requirement": "Build an MVP with minimal operations overhead",
+    "hard_constraints": ["serverless", "low_ops"],
+    "soft_constraints": ["cost_efficient"],
+    "budget_monthly": 500,
+    "team_size": 1,
+    "expected_patterns": ["serverless"],
+    "notes": "Serverless pattern satisfies both serverless and low_ops"
+  },
+  {
+    "id": "tc-010",
+    "name": "Zero Downtime Deployment",
+    "requirement": "Deploy with zero downtime and instant rollback capability",
+    "hard_constraints": ["zero_downtime"],
+    "soft_constraints": [],
+    "budget_monthly": 1000,
+    "team_size": 2,
+    "expected_patterns": ["blue-green"],
+    "notes": "Blue-green is the only pattern with zero_downtime"
+  }
+]

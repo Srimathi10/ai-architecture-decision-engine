@@ -56,7 +56,9 @@ class ConstraintSolver:
         valid = []
         for pattern in candidates:
             check = self.kb.check_constraints(pattern.id, hard_constraints)
-            if check["valid"]:
+            # Pattern must satisfy ALL hard constraints, not just not violate them
+            all_satisfied = len(check["satisfied"]) == len(hard_constraints) if hard_constraints else True
+            if check["valid"] and all_satisfied:
                 valid.append((pattern, check))
 
         # Step 3: Score by soft constraint satisfaction
