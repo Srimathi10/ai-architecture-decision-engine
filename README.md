@@ -301,7 +301,7 @@ All core logic — the pattern knowledge base, constraint solver, cost modeler, 
 
 ## Evidence of Real-World Applicability
 
-This system has been tested against **55 real-world architecture scenarios** across 12 industry verticals:
+This system has been tested against **51 representative architecture scenarios** across 12 industry verticals:
 
 | Industry | Scenarios Tested | Key Constraints |
 |----------|------------------|-----------------|
@@ -327,7 +327,7 @@ The 51 test cases produce the following pattern distribution:
 - **streaming**: 12 scenarios (22%) — real-time, high-throughput processing
 - **monolith**: 3 scenarios (5%) — simple, cost-efficient applications
 
-This distribution reflects real-world architecture decisions: most production systems require either event sourcing (for compliance) or microservices (for scale), while streaming dominates IoT and real-time use cases.
+This distribution reflects representative architecture decisions: most production systems require either event sourcing (for compliance) or microservices (for scale), while streaming dominates IoT and real-time use cases.
 
 ### Why This Matters
 
