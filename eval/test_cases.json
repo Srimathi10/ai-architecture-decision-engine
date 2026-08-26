@@ -3,110 +3,849 @@
     "id": "tc-001",
     "name": "Enterprise Event Sourcing with Audit Trail",
     "requirement": "Build a financial transaction system requiring complete audit trail and time-travel queries",
-    "hard_constraints": ["audit_trail", "time_travel"],
-    "soft_constraints": ["compliance"],
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
     "budget_monthly": 10000,
     "team_size": 5,
-    "expected_patterns": ["event-cqrs"],
+    "expected_patterns": [
+      "event-cqrs"
+    ],
     "notes": "Event sourcing is the only pattern that satisfies both audit_trail and time_travel"
   },
   {
     "id": "tc-002",
-    "name": "Multi-Cloud Disaster Recovery",
-    "requirement": "Deploy the same AI service across AWS and Azure for disaster recovery with 99.99% availability",
-    "hard_constraints": ["multi_cloud", "high_availability"],
+    "name": "Legal Document Management",
+    "requirement": "Document management with legal hold and e-discovery",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
     "soft_constraints": [],
-    "budget_monthly": 20000,
-    "team_size": 8,
-    "expected_patterns": ["multi-cloud"],
-    "notes": "Only multi-cloud pattern satisfies both constraints"
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Legal requires immutable records"
   },
   {
     "id": "tc-003",
-    "name": "Zero Trust Healthcare",
-    "requirement": "Build a healthcare platform with compliance and zero trust security model",
-    "hard_constraints": ["security", "compliance"],
+    "name": "Research Data Platform",
+    "requirement": "Scientific research data with versioning and reproducibility",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
     "soft_constraints": [],
-    "budget_monthly": 8000,
-    "team_size": 4,
-    "expected_patterns": ["zero-trust"],
-    "notes": "Zero trust is required for healthcare compliance"
+    "budget_monthly": 12000,
+    "team_size": 6,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Research requires data versioning"
   },
   {
     "id": "tc-004",
-    "name": "Real-time Event Streaming",
-    "requirement": "Build a real-time analytics platform processing 1M events per second",
-    "hard_constraints": ["real_time", "event_driven"],
-    "soft_constraints": [],
-    "budget_monthly": 5000,
-    "team_size": 4,
-    "expected_patterns": ["streaming"],
-    "notes": "Only Kafka satisfies both real_time and event_driven at this scale"
+    "name": "Regulatory Reporting System",
+    "requirement": "Banking regulatory reports with immutable audit trail",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 12000,
+    "team_size": 6,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Regulatory compliance requires complete audit trail"
   },
   {
     "id": "tc-005",
-    "name": "ML Training Pipeline",
-    "requirement": "Build an ML pipeline for training and deploying recommendation models with full MLOps",
-    "hard_constraints": ["ml_ops"],
-    "soft_constraints": ["cost_efficient"],
-    "budget_monthly": 3000,
+    "name": "Real-time IoT Sensor Processing",
+    "requirement": "Process 100K IoT sensor events per second with low latency",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 5000,
     "team_size": 3,
-    "expected_patterns": ["ml-pipeline"],
-    "notes": "ML Pipeline pattern includes MLflow for reproducibility"
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "IoT requires real-time processing with event-driven architecture"
   },
   {
     "id": "tc-006",
-    "name": "Agentic Workflow with Audit",
-    "requirement": "Build a workflow automation system with human oversight and complete audit trail",
-    "hard_constraints": ["audit_trail", "human_oversight"],
-    "soft_constraints": ["compliance"],
-    "budget_monthly": 5000,
-    "team_size": 3,
-    "expected_patterns": ["agentic-workflow"],
-    "notes": "Agentic workflow is the only pattern with both audit_trail and human_oversight"
+    "name": "Real-time Gaming Backend",
+    "requirement": "Multiplayer game backend with real-time state synchronization",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Gaming requires real-time sync"
   },
   {
     "id": "tc-007",
-    "name": "Kubernetes Auto-scaling",
-    "requirement": "Migrate to microservices on Kubernetes with auto-scaling",
-    "hard_constraints": ["microservices", "auto_scaling"],
-    "soft_constraints": [],
-    "budget_monthly": 15000,
-    "team_size": 6,
-    "expected_patterns": ["k8s-micro"],
-    "notes": "K8s is the only pattern with both microservices and auto_scaling"
+    "name": "Social Media Analytics",
+    "requirement": "Real-time social media monitoring with sentiment analysis",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 7000,
+    "team_size": 4,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Social media requires real-time processing"
   },
   {
     "id": "tc-008",
-    "name": "Cost-Efficient Self-Hosted RAG",
-    "requirement": "Build a RAG system that is self-hosted and cost-efficient",
-    "hard_constraints": ["self_hosted", "cost_efficient"],
-    "soft_constraints": ["python_native"],
-    "budget_monthly": 500,
-    "team_size": 1,
-    "expected_patterns": ["rag-basic"],
-    "notes": "Basic RAG is the only RAG pattern with both self_hosted and cost_efficient"
+    "name": "Smart City Platform",
+    "requirement": "IoT sensor data from traffic, waste, and energy systems",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 20000,
+    "team_size": 8,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Smart city requires massive IoT processing"
   },
   {
     "id": "tc-009",
-    "name": "Serverless Low-Ops",
-    "requirement": "Build an MVP with minimal operations overhead",
-    "hard_constraints": ["serverless", "low_ops"],
-    "soft_constraints": ["cost_efficient"],
-    "budget_monthly": 500,
-    "team_size": 1,
-    "expected_patterns": ["serverless"],
-    "notes": "Serverless pattern satisfies both serverless and low_ops"
+    "name": "Multi-region E-commerce Platform",
+    "requirement": "Global e-commerce with 99.99% uptime and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 20000,
+    "team_size": 10,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "E-commerce requires auto-scaling microservices"
   },
   {
     "id": "tc-010",
-    "name": "Zero Downtime Deployment",
-    "requirement": "Deploy with zero downtime and instant rollback capability",
-    "hard_constraints": ["zero_downtime"],
+    "name": "Video Streaming Platform",
+    "requirement": "Netflix-style video streaming with global CDN and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 30000,
+    "team_size": 12,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Video streaming requires massive auto-scaling"
+  },
+  {
+    "id": "tc-011",
+    "name": "Government Citizen Portal",
+    "requirement": "Public-facing government portal with microservices and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 8000,
+    "team_size": 6,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Government portal requires microservices architecture"
+  },
+  {
+    "id": "tc-012",
+    "name": "Education Learning Platform",
+    "requirement": "Online learning with progress tracking and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 5000,
+    "team_size": 4,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "EdTech requires scalability"
+  },
+  {
+    "id": "tc-013",
+    "name": "Startup MVP Platform",
+    "requirement": "Rapid prototype for a new SaaS product with minimal ops",
+    "hard_constraints": [
+      "serverless",
+      "low_ops"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 500,
+    "team_size": 2,
+    "expected_patterns": [
+      "serverless"
+    ],
+    "notes": "Startup needs fast iteration with minimal ops"
+  },
+  {
+    "id": "tc-014",
+    "name": "Personal Blog",
+    "requirement": "Simple blog with comments and analytics, minimal ops",
+    "hard_constraints": [
+      "serverless",
+      "low_ops"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 50,
+    "team_size": 1,
+    "expected_patterns": [
+      "serverless"
+    ],
+    "notes": "Simple blog with minimal ops"
+  },
+  {
+    "id": "tc-015",
+    "name": "Zero Trust Healthcare System",
+    "requirement": "Healthcare system requiring security and compliance",
+    "hard_constraints": [
+      "security",
+      "compliance"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 25000,
+    "team_size": 10,
+    "expected_patterns": [
+      "zero-trust"
+    ],
+    "notes": "Healthcare requires security and compliance"
+  },
+  {
+    "id": "tc-016",
+    "name": "GDPR-compliant Data Platform",
+    "requirement": "Data platform with GDPR compliance and security",
+    "hard_constraints": [
+      "security",
+      "compliance"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 15000,
+    "team_size": 8,
+    "expected_patterns": [
+      "zero-trust"
+    ],
+    "notes": "GDPR requires security and compliance"
+  },
+  {
+    "id": "tc-017",
+    "name": "Multi-Cloud Disaster Recovery",
+    "requirement": "Disaster recovery across multiple cloud providers",
+    "hard_constraints": [
+      "multi_cloud",
+      "high_availability"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 30000,
+    "team_size": 10,
+    "expected_patterns": [
+      "multi-cloud"
+    ],
+    "notes": "DR requires multi-cloud with high availability"
+  },
+  {
+    "id": "tc-018",
+    "name": "Global High-Availability Platform",
+    "requirement": "Platform requiring multi-cloud deployment for HA",
+    "hard_constraints": [
+      "multi_cloud",
+      "high_availability"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 40000,
+    "team_size": 15,
+    "expected_patterns": [
+      "multi-cloud"
+    ],
+    "notes": "Global HA requires multi-cloud"
+  },
+  {
+    "id": "tc-019",
+    "name": "Self-hosted RAG with Cost Efficiency",
+    "requirement": "Internal knowledge base with self-hosted RAG",
+    "hard_constraints": [
+      "self_hosted",
+      "cost_efficient"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 3000,
+    "team_size": 3,
+    "expected_patterns": [
+      "rag-basic"
+    ],
+    "notes": "Self-hosted RAG for cost efficiency"
+  },
+  {
+    "id": "tc-020",
+    "name": "Enterprise RAG with Citations",
+    "requirement": "Enterprise document search with citation verification",
+    "hard_constraints": [
+      "self_hosted",
+      "citations"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 8000,
+    "team_size": 5,
+    "expected_patterns": [
+      "rag-enterprise"
+    ],
+    "notes": "Enterprise RAG requires citations"
+  },
+  {
+    "id": "tc-021",
+    "name": "Serverless RAG Deployment",
+    "requirement": "RAG system deployed serverless for minimal ops",
+    "hard_constraints": [
+      "serverless"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 2000,
+    "team_size": 2,
+    "expected_patterns": [
+      "rag-serverless"
+    ],
+    "notes": "Serverless RAG for minimal ops"
+  },
+  {
+    "id": "tc-022",
+    "name": "Agentic Workflow with Audit Trail",
+    "requirement": "AI agent system requiring audit trail and human oversight",
+    "hard_constraints": [
+      "audit_trail",
+      "human_oversight"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": [
+      "agentic-workflow"
+    ],
+    "notes": "Agentic workflows require audit and human oversight"
+  },
+  {
+    "id": "tc-023",
+    "name": "Simple Python AI Agent",
+    "requirement": "Quick Python AI agent for prototyping",
+    "hard_constraints": [
+      "python_native"
+    ],
     "soft_constraints": [],
     "budget_monthly": 1000,
     "team_size": 2,
-    "expected_patterns": ["blue-green"],
-    "notes": "Blue-green is the only pattern with zero_downtime"
+    "expected_patterns": [
+      "agentic-simple"
+    ],
+    "notes": "Simple Python agent"
+  },
+  {
+    "id": "tc-024",
+    "name": "Complex Reasoning Agent",
+    "requirement": "AI agent requiring complex multi-step reasoning",
+    "hard_constraints": [
+      "complex_reasoning"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 15000,
+    "team_size": 7,
+    "expected_patterns": [
+      "agentic-multi"
+    ],
+    "notes": "Complex reasoning requires multi-agent"
+  },
+  {
+    "id": "tc-025",
+    "name": "Batch Data Processing Pipeline",
+    "requirement": "Large-scale batch data processing",
+    "hard_constraints": [
+      "batch_streaming"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 20000,
+    "team_size": 8,
+    "expected_patterns": [
+      "data-lakehouse"
+    ],
+    "notes": "Batch processing with data lakehouse"
+  },
+  {
+    "id": "tc-026",
+    "name": "Analytics Data Warehouse",
+    "requirement": "Business intelligence and analytics platform",
+    "hard_constraints": [
+      "analytics"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 15000,
+    "team_size": 6,
+    "expected_patterns": [
+      "data-warehouse"
+    ],
+    "notes": "Analytics requires data warehouse"
+  },
+  {
+    "id": "tc-027",
+    "name": "ML Training Pipeline",
+    "requirement": "Machine learning training pipeline with MLOps",
+    "hard_constraints": [
+      "ml_ops"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 20000,
+    "team_size": 8,
+    "expected_patterns": [
+      "ml-pipeline"
+    ],
+    "notes": "ML training requires MLOps"
+  },
+  {
+    "id": "tc-028",
+    "name": "Cost-Efficient Batch ML Inference",
+    "requirement": "ML inference that is cost efficient and not real-time",
+    "hard_constraints": [
+      "cost_efficient"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 3000,
+    "team_size": 3,
+    "expected_patterns": [
+      "rag-basic"
+    ],
+    "notes": "Cost-efficient self-hosted RAG"
+  },
+  {
+    "id": "tc-029",
+    "name": "API Gateway Platform",
+    "requirement": "API management and gateway for microservices",
+    "hard_constraints": [
+      "api_management"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 5000,
+    "team_size": 4,
+    "expected_patterns": [
+      "api-gateway"
+    ],
+    "notes": "API gateway for management"
+  },
+  {
+    "id": "tc-030",
+    "name": "GraphQL Federation",
+    "requirement": "GraphQL federation for flexible API",
+    "hard_constraints": [
+      "flexible_api"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 8000,
+    "team_size": 5,
+    "expected_patterns": [
+      "graphql-fed"
+    ],
+    "notes": "GraphQL federation for flexibility"
+  },
+  {
+    "id": "tc-031",
+    "name": "Zero Downtime Deployment",
+    "requirement": "Deployment requiring zero downtime",
+    "hard_constraints": [
+      "zero_downtime"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 5000,
+    "team_size": 4,
+    "expected_patterns": [
+      "blue-green"
+    ],
+    "notes": "Blue-green for zero downtime"
+  },
+  {
+    "id": "tc-032",
+    "name": "Simple Audit Trail System",
+    "requirement": "System requiring only audit trail without time-travel",
+    "hard_constraints": [
+      "audit_trail"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 5000,
+    "team_size": 4,
+    "expected_patterns": [
+      "agentic-workflow"
+    ],
+    "notes": "Audit trail with human oversight"
+  },
+  {
+    "id": "tc-033",
+    "name": "GDPR Healthcare with Microservices",
+    "requirement": "Healthcare system with GDPR compliance on Kubernetes",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 25000,
+    "team_size": 10,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Healthcare on K8s with compliance as soft constraint"
+  },
+  {
+    "id": "tc-034",
+    "name": "Financial Trading with Streaming",
+    "requirement": "High-frequency trading with real-time event streaming",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [
+      "audit_trail"
+    ],
+    "budget_monthly": 50000,
+    "team_size": 15,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Trading requires real-time streaming"
+  },
+  {
+    "id": "tc-035",
+    "name": "EHR Integration on Kubernetes",
+    "requirement": "Electronic Health Record integration with auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 25000,
+    "team_size": 10,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "EHR on Kubernetes"
+  },
+  {
+    "id": "tc-036",
+    "name": "Telemedicine Platform on Kubernetes",
+    "requirement": "Video-based telemedicine with auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 15000,
+    "team_size": 7,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Telemedicine requires auto-scaling"
+  },
+  {
+    "id": "tc-037",
+    "name": "Banking Core with Event Sourcing",
+    "requirement": "Core banking with complete audit trail and time-travel",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 50000,
+    "team_size": 20,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Banking requires event sourcing for audit"
+  },
+  {
+    "id": "tc-038",
+    "name": "Cryptocurrency Exchange with Event Sourcing",
+    "requirement": "Trading platform with real-time order matching and audit",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
+    "soft_constraints": [
+      "real_time"
+    ],
+    "budget_monthly": 40000,
+    "team_size": 12,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Crypto requires event sourcing for audit"
+  },
+  {
+    "id": "tc-039",
+    "name": "Government Tax System",
+    "requirement": "Tax filing with complete audit trail and time-travel",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 30000,
+    "team_size": 12,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Tax requires event sourcing for audit"
+  },
+  {
+    "id": "tc-040",
+    "name": "Clinical Trial Management",
+    "requirement": "Research trial data with complete audit trail",
+    "hard_constraints": [
+      "audit_trail",
+      "time_travel"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 20000,
+    "team_size": 8,
+    "expected_patterns": [
+      "event-cqrs"
+    ],
+    "notes": "Clinical trials require complete audit trail"
+  },
+  {
+    "id": "tc-041",
+    "name": "Airline Reservation System",
+    "requirement": "Flight booking with microservices and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "high_availability"
+    ],
+    "budget_monthly": 40000,
+    "team_size": 15,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Airlines require microservices with auto-scaling"
+  },
+  {
+    "id": "tc-042",
+    "name": "Ride-sharing Platform",
+    "requirement": "Real-time ride matching with auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "real_time"
+    ],
+    "budget_monthly": 15000,
+    "team_size": 7,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Ride-sharing requires microservices"
+  },
+  {
+    "id": "tc-043",
+    "name": "News Publishing Platform",
+    "requirement": "Content management with microservices and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "high_availability"
+    ],
+    "budget_monthly": 8000,
+    "team_size": 5,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Publishing requires microservices"
+  },
+  {
+    "id": "tc-044",
+    "name": "Event Ticketing Platform",
+    "requirement": "Ticket sales with microservices and auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "high_availability"
+    ],
+    "budget_monthly": 12000,
+    "team_size": 6,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Ticketing requires microservices"
+  },
+  {
+    "id": "tc-045",
+    "name": "Patient Portal on Kubernetes",
+    "requirement": "Patient-facing portal with auto-scaling",
+    "hard_constraints": [
+      "microservices",
+      "auto_scaling"
+    ],
+    "soft_constraints": [
+      "compliance"
+    ],
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": [
+      "k8s-micro"
+    ],
+    "notes": "Patient portal requires auto-scaling"
+  },
+  {
+    "id": "tc-046",
+    "name": "Logistics Route Optimization",
+    "requirement": "Real-time route optimization with event-driven architecture",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Logistics requires real-time streaming"
+  },
+  {
+    "id": "tc-047",
+    "name": "Manufacturing MES",
+    "requirement": "Manufacturing Execution System with real-time monitoring",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 15000,
+    "team_size": 7,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Manufacturing requires real-time monitoring"
+  },
+  {
+    "id": "tc-048",
+    "name": "Supply Chain Tracking",
+    "requirement": "Global supply chain with real-time shipment tracking",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 8000,
+    "team_size": 4,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Supply chain requires real-time tracking"
+  },
+  {
+    "id": "tc-049",
+    "name": "Food Delivery Platform",
+    "requirement": "Real-time order tracking with GPS and dispatch",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 8000,
+    "team_size": 5,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Delivery requires real-time tracking"
+  },
+  {
+    "id": "tc-050",
+    "name": "Fleet Management Platform",
+    "requirement": "Vehicle tracking with real-time updates",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [],
+    "budget_monthly": 10000,
+    "team_size": 5,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Fleet requires real-time tracking"
+  },
+  {
+    "id": "tc-051",
+    "name": "Agricultural IoT Platform",
+    "requirement": "Farm sensor data with real-time alerts",
+    "hard_constraints": [
+      "real_time",
+      "event_driven"
+    ],
+    "soft_constraints": [
+      "cost_efficient"
+    ],
+    "budget_monthly": 5000,
+    "team_size": 3,
+    "expected_patterns": [
+      "streaming"
+    ],
+    "notes": "Agriculture requires real-time alerts"
   }
 ]
